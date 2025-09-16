@@ -1,11 +1,14 @@
 const sequelize = require("./db");
 const User = require("./models/User");
+const { v4: uuidv4 } = require("uuid");
+
 
 const seed = async () => {
   await sequelize.sync({ force: true }); // Drops & recreates tables
 
   await User.bulkCreate([
     {
+      id: uuidv4(),
       name: "John Doe",
       email: "john@example.com",
       phone: "1234567890",
@@ -17,6 +20,7 @@ const seed = async () => {
       lng: "-74.0060",
     },
     {
+      id: uuidv4(),
       name: "Jane Smith",
       email: "jane@example.com",
       phone: "9876543210",
@@ -28,6 +32,7 @@ const seed = async () => {
       lng: "-122.4194",
     },
     {
+      id: uuidv4(),
       name: "Alice Johnson",
       email: "alice.johnson@example.com",
       phone: "5551234567",
@@ -39,6 +44,7 @@ const seed = async () => {
       lng: "-87.6298",
     },
     {
+      id: uuidv4(),
       name: "Bob Lee",
       email: "bob.lee@example.com",
       phone: "5559876543",
@@ -50,6 +56,7 @@ const seed = async () => {
       lng: "-95.3698",
     },
     {
+      id: uuidv4(),
       name: "Carol White",
       email: "carol.white@example.com",
       phone: "5556781234",
@@ -61,6 +68,7 @@ const seed = async () => {
       lng: "-122.3321",
     },
     {
+      id: uuidv4(),
       name: "David Kim",
       email: "david.kim@example.com",
       phone: "5553219876",
@@ -73,6 +81,7 @@ const seed = async () => {
     },
   
     {
+      id: uuidv4(),
       name: "Quinn Baker",
       email: "quinn.baker@example.com",
       phone: "5552349015",
@@ -84,6 +93,7 @@ const seed = async () => {
       lng: "-82.9988",
     },
     {
+      id: uuidv4(),
       name: "Ruby Carter",
       email: "ruby.carter@example.com",
       phone: "5553450126",
@@ -97,7 +107,9 @@ const seed = async () => {
   ]);
 
   console.log(" Database seeded!");
-  process.exit();
+  // process.exit();
 };
 
-seed();
+module.exports = seed;
+
+// seed(); // Uncomment to run seed directly
