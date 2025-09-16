@@ -23,7 +23,7 @@ export default function UserForm({ onSubmit, initialData = {} }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3 max-w-md mx-auto">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
       {Object.keys(form).map((field) => (
         <div key={field}>
           <input
@@ -33,12 +33,12 @@ export default function UserForm({ onSubmit, initialData = {} }) {
             onChange={handleChange}
             placeholder={field}
             required={["name", "email", "phone"].includes(field)}
-            className="border p-2 w-full"
+            className="border border-gray-700 bg-gray-900 text-gray-100 p-3 w-full rounded focus:outline-none focus:ring-2 focus:ring-cyan-500"
           />
         </div>
       ))}
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
-        Save
+      <button type="submit" className="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded font-semibold transition-colors w-full mt-4">
+        {initialData.id ? "Update User" : "Create User"}
       </button>
     </form>
   );

@@ -18,8 +18,8 @@ export default function EditUser() {
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-xl font-bold mb-4">Edit User</h2>
+    <div className="p-6 bg-gray-800 rounded-lg shadow-xl">
+      <h2 className="text-2xl font-bold mb-6 text-cyan-400">Edit User</h2>
       {user && <UserForm onSubmit={handleSubmit} initialData={user} />}
     </div>
   );

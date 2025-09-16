@@ -9,15 +9,14 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-900 text-gray-100 dark">
         <Navbar />
-        <main className="max-w-6xl mx-auto">
+        <main className="max-w-6xl mx-auto py-8">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/create" element={<CreateUser />} />
             <Route path="/edit/:id" element={<EditUser />} />
             <Route path="/users/:id" element={<UserDetails />} />
-            
           </Routes>
         </main>
       </div>
