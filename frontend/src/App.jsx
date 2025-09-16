@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import CreateUser from "./pages/CreateUser";
 import EditUser from "./pages/EditUser";
-import UserDetails from "./pages/userDetails";
 import './App.css';
+import UserDetails from "./pages/UserDetails";
 
 function App() {
   return (
